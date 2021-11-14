@@ -1,0 +1,1513 @@
+{
+	"info": {
+		"_postman_id": "5c0e3b15-56ab-4ea7-a325-15912d17aa43",
+		"name": "TryHackMe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "room",
+			"item": [
+				{
+					"name": "recommended last rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/recommend/last-room?type=json",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"recommend",
+								"last-room"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "json"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new-rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/new-rooms",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"new-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "questions answered this week",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/questions-answered",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"questions-answered"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "questions answered this week",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/questions-answered",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"questions-answered"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Nov 2021 23:11:15 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALB=g1aKMr2hmJiDE39PUFmbqA6S8Nq/duNqDpCFE0YEQ/3/pXKcsAx2Iis33CREr+2gQ9Iu9koX5pADekfvjF7YyZSwuEEZ6yLnw5VKvvJEtVu69pN+LrEMKaEfJAdD; Expires=Sun, 21 Nov 2021 23:11:15 GMT; Path=/"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALBCORS=g1aKMr2hmJiDE39PUFmbqA6S8Nq/duNqDpCFE0YEQ/3/pXKcsAx2Iis33CREr+2gQ9Iu9koX5pADekfvjF7YyZSwuEEZ6yLnw5VKvvJEtVu69pN+LrEMKaEfJAdD; Expires=Sun, 21 Nov 2021 23:11:15 GMT; Path=/; SameSite=None"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3c-iEI5Dew45SEETXjQaKu+OlDuK9Y\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Vl6PY%2Ff4fasoM5xSHWYd3jYGHa3a385wk7hV7%2BjJo%2FqfXRdhJIhtO7nGN9buUqKwIVmKnRPiyGiH4JxFpI2nhYxVaoLoklrqRqPQ%2FKP1189UUsIUxBuUcqccry1aS44%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6ae3eafbac500b88-AMS"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"_id\": {\n            \"year\": \"2021\",\n            \"month\": \"11\",\n            \"day\": \"14\"\n        },\n        \"events\": 1\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "room-percentages",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rooms\": [\r\n        \"{{room_code}}\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/room-percentages",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"room-percentages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-rooms",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/my-rooms",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"my-rooms"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "scoreboard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/room/scoreboard?code={{room_code}}&limit=10",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"room",
+								"scoreboard"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "{{room_code}}"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "votes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/room/votes?code={{room_code}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"room",
+								"votes"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "{{room_code}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/room/details?codes={{room_code}}&loadWriteUps=false&loadCreators=false&loadUser=true",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"room",
+								"details"
+							],
+							"query": [
+								{
+									"key": "codes",
+									"value": "{{room_code}}",
+									"description": "list of room codes delimited by ','"
+								},
+								{
+									"key": "loadWriteUps",
+									"value": "false"
+								},
+								{
+									"key": "loadCreators",
+									"value": "false"
+								},
+								{
+									"key": "loadUser",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tasks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/tasks/:room_name",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"tasks",
+								":room_name"
+							],
+							"variable": [
+								{
+									"key": "room_name",
+									"value": "{{room_code}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "answer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "answer",
+									"value": "{{question_answer}}",
+									"description": "answer value",
+									"type": "text"
+								},
+								{
+									"key": "questionNo",
+									"value": "{{qeustion_number}}",
+									"type": "text"
+								},
+								{
+									"key": "taskNo",
+									"value": "{{task_number}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/:room_name/answer",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								":room_name",
+								"answer"
+							],
+							"variable": [
+								{
+									"key": "room_name",
+									"value": "{{room_code}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deploy machine",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Upload Id",
+									"type": "text"
+								},
+								{
+									"key": "roomCode",
+									"value": "{{room_code}}",
+									"description": "Room code",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/material/deploy",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"material",
+								"deploy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset progress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "{{room_code}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/reset-progress",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"reset-progress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "leave room",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "{{room_code}}",
+									"type": "text"
+								},
+								{
+									"key": "_csrf",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/room/leave",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"room",
+								"leave"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "badge",
+					"item": [
+						{
+							"name": "get current user badges",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/badges/mine",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"badges",
+										"mine"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get user badges",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/badges/get/:username",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"badges",
+										"get",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "{{username}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all badges",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/badges/get",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"badges",
+										"get"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "team",
+					"item": [
+						{
+							"name": "is-member",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/team/is-member",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"team",
+										"is-member"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notifications",
+					"item": [
+						{
+							"name": "has unseen notifications",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/notifications/has-unseen",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"notifications",
+										"has-unseen"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all notifications",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/notifications/get",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"notifications",
+										"get"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "messages",
+					"item": [
+						{
+							"name": "unseen messages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/message/unseen",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"message",
+										"unseen"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all group messages",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/message/group/get-all",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"message",
+										"group",
+										"get-all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "room",
+					"item": [
+						{
+							"name": "number of user completed rooms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/no-completed-rooms-public/:username",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"no-completed-rooms-public",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "{{username}}"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user completed rooms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/all-completed-rooms?username={{username}}&limit=10&page=1",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"all-completed-rooms"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "{{username}}"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "created rooms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/created-rooms/:username?limit=50",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"created-rooms",
+										":username"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "50"
+										}
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "{{username}}"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "rank",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/user/rank/:username",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"rank",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user activty",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/user/activity-events?username={{username}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"activity-events"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all friends",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/friend/all",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"friend",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vpn",
+			"item": [
+				{
+					"name": "get-available-vpns",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/vpn/get-available-vpns?type=machines",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"vpn",
+								"get-available-vpns"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "machines",
+									"description": "machines, networks"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/vpn/my-data",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"vpn",
+								"my-data"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "paths",
+			"item": [
+				{
+					"name": "summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/paths/summary",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"paths",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "modules",
+			"item": [
+				{
+					"name": "summary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/modules/summary",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"modules",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "games",
+			"item": [
+				{
+					"name": "recent games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/koth/recent/games",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"recent",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "machine-pool",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/koth/get/machine-pool",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"get",
+								"machine-pool"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/koth/user/games",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"user",
+								"games"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tickets won",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/tickets/won?username={{username}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"tickets",
+								"won"
+							],
+							"query": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "new King of the hill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "type",
+									"value": "private",
+									"description": "private / public",
+									"type": "text"
+								},
+								{
+									"key": "startin",
+									"value": "120",
+									"description": "minutes",
+									"type": "text"
+								},
+								{
+									"key": "uploadTitle",
+									"value": "random",
+									"description": "random / machine-pool",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/games/koth/new",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"new"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "join king of the hill",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/koth/join-public",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"join-public"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "game detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/koth/data/:game_code",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"data",
+								":game_code"
+							],
+							"variable": [
+								{
+									"key": "game_code",
+									"value": "{{game_code}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vm",
+			"item": [
+				{
+					"name": "is running",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/vm/running",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"vm",
+								"running"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "is running",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/vm/running",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"vm",
+										"running"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sun, 14 Nov 2021 23:10:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALB=gf7jHLgt7pkO9agt2zSGfqkIi+WWLl86aXNV8FApHHafXOIkdjQ39GPLf166IeckkB//OueW8lGyxzwfAI5AJHEHGd+yPw1riP7JMwKKc73/eDllOeiG7eIhKSiy; Expires=Sun, 21 Nov 2021 23:10:10 GMT; Path=/"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALBCORS=gf7jHLgt7pkO9agt2zSGfqkIi+WWLl86aXNV8FApHHafXOIkdjQ39GPLf166IeckkB//OueW8lGyxzwfAI5AJHEHGd+yPw1riP7JMwKKc73/eDllOeiG7eIhKSiy; Expires=Sun, 21 Nov 2021 23:10:10 GMT; Path=/; SameSite=None"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c2-jUsc0r6mMUUhMHmEZbdjObRbpSw\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Report-To",
+									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=wmEODTvGI3qURDb2sFtHUGVc8wD%2FIIIsuv46NsCYXM2mF54vqeuVDlI1gZlHWT8%2Feh1%2FNhVVq%2FL9ZtzkPSq%2BRaSHkN5hgg3fUZCVkcMN7zTifxZVII3dVfbZ%2FK9RNRw%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6ae3e9663a3b0b88-AMS"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"roomId\": \"room_code\",\n        \"expires\": \"2021-11-15T00:08:21.178Z\",\n        \"created\": \"2021-11-14T23:08:21.178Z\",\n        \"internalIP\": \"10.10.156.97\",\n        \"instanceId\": \"instanceId\",\n        \"title\": \"Title\",\n        \"timeInSeconds\": 3490.209,\n        \"remote\": {\n            \"active\": true,\n            \"bootTime\": 2,\n            \"privateIp\": \"10.10.156.97\",\n            \"remoteUrl\": \"https://vnc.tryhackme.tech/index.html?host=proxy.tryhackme.tech&password=tryhackme&proxyIP=10.10.156.97&resize=remote\",\n            \"protocol\": \"vnc\"\n        },\n        \"waitTime\": null\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "VM renew",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "{{room_code}}",
+									"type": "text"
+								},
+								{
+									"key": "_csrf",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/vm/renew",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"vm",
+								"renew"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "VM terminate",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "code",
+									"value": "{{room_code}}",
+									"type": "text"
+								},
+								{
+									"key": "_csrf",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{endpoint}}/api/vm/terminate",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"vm",
+								"terminate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "server-time",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/api/server-time",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"server-time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "site-stats",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/api/site-stats",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"site-stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaderboards",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/api/leaderboards",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"leaderboards"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "{{country_code}}",
+							"description": "Optional",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "monthly",
+							"description": "Optional",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "leaderboards King of the hill",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/api/leaderboards/koth",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"leaderboards",
+						"koth"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "{{country_code}}",
+							"description": "Optional",
+							"disabled": true
+						},
+						{
+							"key": "type",
+							"value": "monthly",
+							"description": "Optional",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "hacktivities",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/api/hacktivities?page=1&free=all&order=most-popular&difficulty=all&type=all",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"hacktivities"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "free",
+							"value": "all"
+						},
+						{
+							"key": "order",
+							"value": "most-popular"
+						},
+						{
+							"key": "difficulty",
+							"value": "all"
+						},
+						{
+							"key": "type",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "networks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/api/networks",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"networks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "series",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/api/series?show=details_only",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"api",
+						"series"
+					],
+					"query": [
+						{
+							"key": "show",
+							"value": "details_only",
+							"description": "details_only, all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscription cost",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/account/subscription/cost",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"account",
+						"subscription",
+						"cost"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "glossary",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/glossary/all-terms",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"glossary",
+						"all-terms"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"",
+					"// Set connect.sid cookie ",
+					"const cookieJar = pm.cookies.jar();",
+					"cookieJar.set(pm.environment.get(\"endpoint\"), \"connect.sid\", pm.environment.get(\"connect.sid\"), (error, cookie) => {console.log(error)});",
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
