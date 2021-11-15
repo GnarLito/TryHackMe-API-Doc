@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "5c0e3b15-56ab-4ea7-a325-15912d17aa43",
+		"_postman_id": "451cf83a-6817-4bb7-8f64-97cfdc66d362",
 		"name": "TryHackMe",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -808,6 +808,32 @@
 							"path": [
 								"friend",
 								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "discord user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/discord/user/:username",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"discord",
+								"user",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								}
 							]
 						}
 					},
