@@ -1,6 +1,6 @@
 # TryHackMe-API-Doc
 
-Postman documentation of the TryHackMe API.
+Unofficial postman documentation of the TryHackMe API.
 
 If Api's are missing or arent working please let me know via a issue.
 
