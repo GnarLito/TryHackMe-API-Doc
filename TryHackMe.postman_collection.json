@@ -1,7 +1,8 @@
 {
 	"info": {
-		"_postman_id": "451cf83a-6817-4bb7-8f64-97cfdc66d362",
+		"_postman_id": "39a4ab77-7c66-4b08-b37c-405e3c415c93",
 		"name": "TryHackMe",
+		"description": "This is an unofficial API documentation for the Try Hack Me API.\n\nSome of the endpoints only work when the connect.sid is filled, this can be found as cookie after u signed in to tryhackme.com.\n\n[Github page](https://github.com/GnarLito/TryHackMe-API-Doc)\n\n[Workspace page](https://www.postman.com/gnarlito/workspace/tryhackme-doc/collection/18269560-6482e605-fc19-4dbd-bbcf-934aa81eec21)\n\nPLease note:\nExample responses could differ if u are a premium member.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -14,12 +15,11 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{endpoint}}/api/recommend/last-room?type=json",
+							"raw": "{{endpoint}}/recommend/last-room?type=json",
 							"host": [
 								"{{endpoint}}"
 							],
 							"path": [
-								"api",
 								"recommend",
 								"last-room"
 							],
@@ -29,9 +29,69 @@
 									"value": "json"
 								}
 							]
-						}
+						},
+						"description": "connect.sid required"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/recommend/last-room?type=json",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"recommend",
+										"last-room"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "json"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"roomCode\": \"squidgameroom\",\n        \"actionDate\": \"2021-11-14T23:10:48.318Z\",\n        \"lastAction\": \"answer-question\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "new-rooms",
@@ -49,7 +109,64 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/new-rooms",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"new-rooms"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"type\": \"challenge\",\n        \"code\": \"containme1\",\n        \"title\": \"ContainMe\",\n        \"imageURL\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/89eaf880161ad2a96f0a8000b5f9ab57.jpeg\",\n        \"creator\": \"ITSecHack\"\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "questions answered this week",
@@ -69,7 +186,7 @@
 					},
 					"response": [
 						{
-							"name": "questions answered this week",
+							"name": "Successful Opteration",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -89,10 +206,6 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
-									"key": "Date",
-									"value": "Sun, 14 Nov 2021 23:11:15 GMT"
-								},
-								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
@@ -105,32 +218,12 @@
 									"value": "keep-alive"
 								},
 								{
-									"key": "Set-Cookie",
-									"value": "AWSALB=g1aKMr2hmJiDE39PUFmbqA6S8Nq/duNqDpCFE0YEQ/3/pXKcsAx2Iis33CREr+2gQ9Iu9koX5pADekfvjF7YyZSwuEEZ6yLnw5VKvvJEtVu69pN+LrEMKaEfJAdD; Expires=Sun, 21 Nov 2021 23:11:15 GMT; Path=/"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "AWSALBCORS=g1aKMr2hmJiDE39PUFmbqA6S8Nq/duNqDpCFE0YEQ/3/pXKcsAx2Iis33CREr+2gQ9Iu9koX5pADekfvjF7YyZSwuEEZ6yLnw5VKvvJEtVu69pN+LrEMKaEfJAdD; Expires=Sun, 21 Nov 2021 23:11:15 GMT; Path=/; SameSite=None"
-								},
-								{
 									"key": "X-Powered-By",
 									"value": "Express"
 								},
 								{
-									"key": "ETag",
-									"value": "W/\"3c-iEI5Dew45SEETXjQaKu+OlDuK9Y\""
-								},
-								{
 									"key": "CF-Cache-Status",
 									"value": "DYNAMIC"
-								},
-								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Report-To",
-									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Vl6PY%2Ff4fasoM5xSHWYd3jYGHa3a385wk7hV7%2BjJo%2FqfXRdhJIhtO7nGN9buUqKwIVmKnRPiyGiH4JxFpI2nhYxVaoLoklrqRqPQ%2FKP1189UUsIUxBuUcqccry1aS44%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
 								},
 								{
 									"key": "NEL",
@@ -139,10 +232,6 @@
 								{
 									"key": "Server",
 									"value": "cloudflare"
-								},
-								{
-									"key": "CF-RAY",
-									"value": "6ae3eafbac500b88-AMS"
 								},
 								{
 									"key": "Content-Encoding",
@@ -177,27 +266,172 @@
 								"api",
 								"room-percentages"
 							]
-						}
+						},
+						"description": "connect.sid required"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rooms\": [\r\n        \"{{room_code}}\"\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/api/room-percentages",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"room-percentages"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"roomCode\": \"reloaded\",\n        \"correct\": 3,\n        \"total\": 6,\n        \"perc\": 0.5\n    }\n]"
+						}
+					]
 				},
 				{
-					"name": "my-rooms",
+					"name": "joined rooms",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{endpoint}}/api/my-rooms",
+							"raw": "{{endpoint}}/api/my-rooms?limit=10&page=1",
 							"host": [
 								"{{endpoint}}"
 							],
 							"path": [
 								"api",
 								"my-rooms"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
 							]
-						}
+						},
+						"description": "connect.sid required"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/my-rooms?limit=1&page=1",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"my-rooms"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "1"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paginator\": {\n        \"totalDocs\": 27,\n        \"totalInPage\": 10,\n        \"limit\": 1,\n        \"page\": 1,\n        \"totalPages\": 3,\n        \"hasPrevPage\": false,\n        \"hasNextPage\": true,\n        \"prevPage\": null,\n        \"nextPage\": 2\n    },\n    \"rooms\": [\n        {\n            \"success\": true,\n            \"roomCode\": \"reverseengineering\",\n            \"roomId\": \"5bf48b40f745217dc7c1cb11\",\n            \"creators\": [],\n            \"accessToken\": \"0a5eed21f84345dff7350145a627a6d7c4b88f50\",\n            \"title\": \"Reverse Engineering\",\n            \"description\": \"This room focuses on teaching the basics of assembly through reverse engineering\",\n            \"image\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/3ec9fc01a45ef27a6f981307e085145b.jpg\",\n            \"created\": \"2018-11-20T22:31:28.620Z\",\n            \"published\": \"2018-11-20T22:31:28.620Z\",\n            \"users\": 6778,\n            \"type\": \"challenge\",\n            \"public\": true,\n            \"cloneable\": true,\n            \"code\": \"reverseengineering\",\n            \"oneTimeFee\": 0,\n            \"difficulty\": \"medium\",\n            \"freeToUse\": true,\n            \"ctf\": false,\n            \"sponsor\": {\n                \"enabled\": false,\n                \"file\": \"\",\n                \"name\": \"\"\n            },\n            \"tags\": [\n                \"gdb\"\n            ],\n            \"ipType\": \"private\",\n            \"simpleRoom\": false,\n            \"writeups\": [],\n            \"headerImage\": \"/img/banners/default_tryhackme.png\",\n            \"locked\": false,\n            \"comingSoon\": false,\n            \"checked\": {\n                \"status\": \"unreleased\",\n                \"comments\": []\n            },\n            \"views\": 56434,\n            \"scoreType\": 0,\n            \"video\": {\n                \"free\": true,\n                \"source\": \"THM\",\n                \"timestamps\": [],\n                \"active\": false,\n                \"autoOpen\": true\n            },\n            \"network\": {\n                \"creators\": [],\n                \"active\": false\n            },\n            \"paidAccess\": {\n                \"costs\": [],\n                \"users\": [],\n                \"active\": false,\n                \"streak\": {\n                    \"enabled\": false,\n                    \"number\": 0\n                }\n            },\n            \"certificate\": false,\n            \"timeToComplete\": 0,\n            \"userCompleted\": true\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
 				},
 				{
 					"name": "scoreboard",
@@ -217,16 +451,87 @@
 							"query": [
 								{
 									"key": "code",
-									"value": "{{room_code}}"
+									"value": "{{room_code}}",
+									"description": "Room code"
 								},
 								{
 									"key": "limit",
 									"value": "10"
 								}
 							]
-						}
+						},
+						"description": "connect.sid required"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/room/scoreboard?code={{room_code}}&limit=10",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"room",
+										"scoreboard"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "{{room_code}}",
+											"description": "Room code"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"username\": \"szymex73\",\n        \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/63bace66f9fd518c92bb597f01f1a6e1.png\",\n        \"level\": 999,\n        \"score\": 430,\n        \"tasks\": {\n            \"1\": [\n                {\n                    \"questionNo\": 1,\n                    \"attempts\": 0,\n                    \"score\": 80,\n                    \"correct\": true,\n                    \"timeCorrect\": \"2021-02-26T19:02:55.285Z\"\n                }\n            ]\n        },\n        \"rank\": 1\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "votes",
@@ -246,12 +551,74 @@
 							"query": [
 								{
 									"key": "code",
-									"value": "{{room_code}}"
+									"value": "{{room_code}}",
+									"description": "Room code"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/room/votes?code={{room_code}}",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"room",
+										"votes"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "{{room_code}}",
+											"description": "Room code"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "27"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"upvotes\": 58,\n    \"userVote\": 0\n}"
+						}
+					]
 				},
 				{
 					"name": "details",
@@ -259,7 +626,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{endpoint}}/api/room/details?codes={{room_code}}&loadWriteUps=false&loadCreators=false&loadUser=true",
+							"raw": "{{endpoint}}/api/room/details?codes={{room_code}}&loadWriteUps=true&loadCreators=true&loadUser=true",
 							"host": [
 								"{{endpoint}}"
 							],
@@ -276,11 +643,11 @@
 								},
 								{
 									"key": "loadWriteUps",
-									"value": "false"
+									"value": "true"
 								},
 								{
 									"key": "loadCreators",
-									"value": "false"
+									"value": "true"
 								},
 								{
 									"key": "loadUser",
@@ -289,7 +656,84 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/room/details?codes={{room_code}}&loadWriteUps=false&loadCreators=false&loadUser=true",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"room",
+										"details"
+									],
+									"query": [
+										{
+											"key": "codes",
+											"value": "{{room_code}}",
+											"description": "list of room codes delimited by ','"
+										},
+										{
+											"key": "loadWriteUps",
+											"value": "false"
+										},
+										{
+											"key": "loadCreators",
+											"value": "false"
+										},
+										{
+											"key": "loadUser",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"reloaded\": {\n        \"success\": true,\n        \"roomCode\": \"reloaded\",\n        \"roomId\": \"5ffb065e21822925225c623e\",\n        \"creators\": [],\n        \"title\": \"REloaded\",\n        \"description\": \"This room is dedicated for the RE challenges, each challenge has unique concepts divided in each binaries. As if now only phase 1 is added will decide about phase 2 on response. Developed by WhiteHeart and tested by IslaMukheef\",\n        \"image\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/e9e1cdcb6d2f8d9c0401bb3ec9d7218c.jpeg\",\n        \"created\": \"2021-01-10T13:51:26.129Z\",\n        \"published\": \"2021-02-26T19:00:00.172Z\",\n        \"users\": 1224,\n        \"type\": \"challenge\",\n        \"public\": true,\n        \"cloneable\": false,\n        \"code\": 4,\n        \"oneTimeFee\": 0,\n        \"difficulty\": \"hard\",\n        \"freeToUse\": true,\n        \"ctf\": false,\n        \"sponsor\": {\n            \"file\": \"\",\n            \"name\": \"\",\n            \"enabled\": false\n        },\n        \"tags\": [\n            \"Reverse Engineering \",\n            \"reversing  \",\n            \"crypto\"\n        ],\n        \"ipType\": \"private\",\n        \"simpleRoom\": false,\n        \"writeups\": [],\n        \"headerImage\": \"https://assets.tryhackme.com/img/banners/default_tryhackme.png\",\n        \"locked\": false,\n        \"comingSoon\": false,\n        \"forumLink\": \"/thread/60394530cdec742dce5bb2ea\",\n        \"views\": 10230,\n        \"scoreType\": 0,\n        \"video\": {\n            \"timestamps\": [],\n            \"source\": \"THM\",\n            \"free\": true,\n            \"active\": false,\n            \"autoOpen\": true\n        },\n        \"network\": {\n            \"creators\": [],\n            \"active\": false\n        },\n        \"paidAccess\": {\n            \"costs\": [],\n            \"active\": false,\n            \"streak\": {\n                \"enabled\": false,\n                \"number\": 0\n            },\n            \"daysLeft\": 0\n        },\n        \"certificate\": false,\n        \"timeToComplete\": 0,\n        \"userCompleted\": false\n    }\n}"
+						}
+					]
 				},
 				{
 					"name": "tasks",
@@ -309,18 +753,155 @@
 							"variable": [
 								{
 									"key": "room_name",
-									"value": "{{room_code}}"
+									"value": "{{room_code}}",
+									"description": "Room code"
 								}
 							]
-						}
+						},
+						"description": "connect.sid required for taskinfo"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Opteration (nologin)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/tasks/:room_name",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":room_name"
+									],
+									"variable": [
+										{
+											"key": "room_name",
+											"value": "{{room_code}}",
+											"description": "Room code"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bc2-Q7ux+9aHuVGW7Iw//ptLHLXnOYw\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"taskTitle\": \"Level 0\",\n            \"taskDesc\": \"This challenge is the most basic of RE.Â  It will teach about how to enumerate files and get juicy details.<br />\",\n            \"taskType\": \"downloadable\",\n            \"taskNo\": 1,\n            \"taskCreated\": \"2021-01-10T13:54:30.572Z\",\n            \"taskDeadline\": null,\n            \"tasksInfo\": [],\n            \"uploadId\": \"5ffb0a130c7fb02514fcf539\",\n            \"questions\": [\n                {\n                    \"questionNo\": 1,\n                    \"question\": \"Flag ?<br />\",\n                    \"hint\": \"Pull The Strings\"\n                }\n            ]\n        }\n    ],\n    \"totalTasks\": 5,\n    \"containsStaticSites\": false\n}"
+						},
+						{
+							"name": "Successful Opteration (logedin)",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/tasks/:room_name",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"tasks",
+										":room_name"
+									],
+									"variable": [
+										{
+											"key": "room_name",
+											"value": "{{room_code}}",
+											"description": "Room code"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"taskTitle\": \"Level 0\",\n            \"taskDesc\": \"This challenge is the most basic of RE.Â  It will teach about how to enumerate files and get juicy details.<br />\",\n            \"taskType\": \"downloadable\",\n            \"taskNo\": 1,\n            \"taskCreated\": \"2021-01-10T13:54:30.572Z\",\n            \"taskDeadline\": null,\n            \"tasksInfo\": [\n                {\n                    \"question\": \"Flag ?<br />\",\n                    \"hint\": \"Pull The Strings\",\n                    \"questionNo\": 1,\n                    \"correct\": true,\n                    \"extraPoints\": 0,\n                    \"attempts\": 0,\n                    \"submission\": \"L3v3lZ340_is_D02e\",\n                    \"noAnswer\": false,\n                    \"answerDesc\": \"Answer format: *****************\"\n                }\n            ],\n            \"uploadId\": \"5ffb0a130c7fb02514fcf539\",\n            \"questions\": [\n                {\n                    \"questionNo\": 1,\n                    \"question\": \"Flag ?<br />\",\n                    \"hint\": \"Pull The Strings\"\n                }\n            ]\n        }\n    ],\n    \"totalTasks\": 5,\n    \"containsStaticSites\": false\n}"
+						}
+					]
 				},
 				{
 					"name": "answer",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "CSRF-Token",
+								"value": "{{csrf}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -332,30 +913,32 @@
 								},
 								{
 									"key": "questionNo",
-									"value": "{{qeustion_number}}",
+									"value": "{{question_number}}",
+									"description": "Question number",
 									"type": "text"
 								},
 								{
 									"key": "taskNo",
 									"value": "{{task_number}}",
+									"description": "Task number",
 									"type": "text"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{endpoint}}/api/:room_name/answer",
+							"raw": "{{endpoint}}/api/:room_code/answer",
 							"host": [
 								"{{endpoint}}"
 							],
 							"path": [
 								"api",
-								":room_name",
+								":room_code",
 								"answer"
 							],
 							"variable": [
 								{
-									"key": "room_name",
-									"value": "{{room_code}}"
+									"key": "room_code",
+									"value": null
 								}
 							]
 						}
@@ -366,7 +949,13 @@
 					"name": "deploy machine",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "CSRF-Token",
+								"value": "{{csrf}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
@@ -401,13 +990,20 @@
 					"name": "reset progress",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "CSRF-Token",
+								"value": "{{csrf}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "code",
 									"value": "{{room_code}}",
+									"description": "Room code",
 									"type": "text"
 								}
 							]
@@ -436,11 +1032,13 @@
 								{
 									"key": "code",
 									"value": "{{room_code}}",
+									"description": "Room code",
 									"type": "text"
 								},
 								{
 									"key": "_csrf",
-									"value": "",
+									"value": "{{csrf}}",
+									"description": "crsf token",
 									"type": "text"
 								}
 							]
@@ -482,12 +1080,71 @@
 										"badges",
 										"mine"
 									]
-								}
+								},
+								"description": "connect.sid required"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/badges/mine",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"badges",
+												"mine"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"badges\": [\n        \"christmas2019\"\n    ]\n}"
+								}
+							]
 						},
 						{
-							"name": "get user badges",
+							"name": "get badges",
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -505,31 +1162,136 @@
 									"variable": [
 										{
 											"key": "username",
-											"value": "{{username}}"
+											"value": "{{username}}",
+											"description": "Optional"
 										}
 									]
 								}
 							},
-							"response": []
-						},
-						{
-							"name": "get all badges",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{endpoint}}/api/badges/get",
-									"host": [
-										"{{endpoint}}"
+							"response": [
+								{
+									"name": "Successful Operation (no user)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/badges/get",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"badges",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
 									],
-									"path": [
-										"api",
-										"badges",
-										"get"
-									]
+									"cookie": [],
+									"body": "[\n    {\n        \"title\": \"Mr. Robot\",\n        \"name\": \"mr-robot\",\n        \"image\": \"/img/badges/mrrobot.svg\",\n        \"description\": \"Completing the Mr. Robot room\",\n        \"toEarn\": [\n            \"mrrobot\"\n        ]\n    }\n]"
+								},
+								{
+									"name": "Successful Operation (user)",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/badges/get/:username",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"badges",
+												"get",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"description": "Optional"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"name\": \"mr-robot\",\n        \"image\": \"9f19ad98acd49c07a0e3ca1acd9781f4.png\"\n    },\n    {\n        \"_id\": \"60ad1d307f81a7004fb2829a\",\n        \"name\": \"christmas2019\",\n        \"image\": \"\"\n    }\n]"
 								}
-							},
-							"response": []
+							]
 						}
 					]
 				},
@@ -551,9 +1313,68 @@
 										"team",
 										"is-member"
 									]
-								}
+								},
+								"description": "connect.sid required"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/team/is-member",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"team",
+												"is-member"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"found\": true,\n    \"name\": \"team_name\",\n    \"members\": [\n        \"user_1\",\n        \"user_2\"\n    ],\n    \"captain\": \"user_1\",\n    \"password\": \"password\",\n    \"university\": \"none\"\n}"
+								}
+							]
 						}
 					]
 				},
@@ -585,9 +1406,63 @@
 										"notifications",
 										"has-unseen"
 									]
-								}
+								},
+								"description": "connect.sid required"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/notifications/has-unseen",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"notifications",
+												"has-unseen"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "19"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"hasUnread\": false\n}"
+								}
+							]
 						},
 						{
 							"name": "get all notifications",
@@ -603,9 +1478,67 @@
 										"notifications",
 										"get"
 									]
-								}
+								},
+								"description": "connect.sid required"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/notifications/get",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"notifications",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"read\": false,\n        \"description\": \"There is a new <a href=\\\"/messages\\\">conversation</a> that you are involved with!\",\n        \"icon\": \"message\",\n        \"created\": \"2021-11-19T23:49:51.061Z\"\n    }\n]"
+								}
+							]
 						}
 					]
 				},
@@ -626,9 +1559,67 @@
 										"message",
 										"unseen"
 									]
-								}
+								},
+								"description": "connect.sid required"
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/message/unseen",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"message",
+												"unseen"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"unseen\": [\n        {\n            \"_id\": \"6198342f3b952f005eadee87\",\n            \"type\": \"regular\",\n            \"inserted\": \"2021-11-19T23:33:03.509Z\",\n            \"title\": \"group_name\"\n        }\n    ]\n}"
+								}
+							]
 						},
 						{
 							"name": "get all group messages",
@@ -645,9 +1636,645 @@
 										"group",
 										"get-all"
 									]
+								},
+								"description": "connect.sid required"
+							},
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/message/group/get-all",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"message",
+												"group",
+												"get-all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"groupId\": \"6198342f3b000f005eadee87\",\n        \"last\": {\n            \"seen\": [\n                \"5f0f036fd9f6bc13b8400088\"\n            ],\n            \"msg\": \"test\",\n            \"sent\": \"2021-11-19T23:45:26.521Z\",\n            \"userId\": \"5f0f036fd9f6bc13b8400088\"\n        },\n        \"title\": \"group_title\",\n        \"inConvo\": \"username\",\n        \"users\": [\n            {\n                \"userId\": \"5f0f036fd9f6bc13b840088\",\n                \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/a8e50db00007a92d5ea67aa77abe71bf.jpg\",\n                \"username\": \"username\",\n                \"level\": 99\n            }\n        ]\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "get group",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/message/group/get/:groupId",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"message",
+										"group",
+										"get",
+										":groupId"
+									],
+									"variable": [
+										{
+											"key": "groupId",
+											"value": "{{groupId}}"
+										}
+									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/message/group/get/:groupId",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"message",
+												"group",
+												"get",
+												":groupId"
+											],
+											"variable": [
+												{
+													"key": "groupId",
+													"value": "{{groupId}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"inserted\": \"2021-11-19T23:33:03.564Z\",\n        \"userId\": \"5eaf4682df79206d0000000\",\n        \"message\": \"message\",\n        \"groupId\": \"6198342f3b952f005e000000\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "create group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "CSRF-Token",
+										"value": "{{csrf}}",
+										"description": "Required",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "test",
+											"description": "group title",
+											"type": "text"
+										},
+										{
+											"key": "initialMessage",
+											"value": "test",
+											"description": "first message to send",
+											"type": "text"
+										},
+										{
+											"key": "userIds[]",
+											"value": "5f0f036fd9f6bc13b840ee88",
+											"description": "user ID list",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{endpoint}}/message/group/create",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"message",
+										"group",
+										"create"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "CSRF-Token",
+												"value": "{{csrf}}",
+												"description": "Required",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "initialMessage",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "test",
+													"type": "text"
+												},
+												{
+													"key": "userIds[]",
+													"value": "",
+													"description": "userId list",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{endpoint}}/message/group/create",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"message",
+												"group",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"groupId\": \"61983b68677dee09500009ef\"\n}"
+								}
+							]
+						},
+						{
+							"name": "rename group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "CSRF-Token",
+										"value": "{{csrf}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "",
+											"description": "New group name",
+											"type": "text"
+										},
+										{
+											"key": "groupId",
+											"value": "{{groupId}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{endpoint}}/message/group/update",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"message",
+										"group",
+										"update"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "CSRF-Token",
+												"value": "{{csrf}}",
+												"description": "Required",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "groupId",
+													"value": "{{groupId}}",
+													"type": "text"
+												},
+												{
+													"key": "title",
+													"value": "test",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{endpoint}}/message/group/update",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"message",
+												"group",
+												"update"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"msg\": \"Conversation title successfully changed\"\n}"
+								}
+							]
+						},
+						{
+							"name": "send message",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "CSRF-Token",
+										"value": "{{csrf}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "message",
+											"value": "",
+											"description": "Message to send",
+											"type": "text"
+										},
+										{
+											"key": "groupId",
+											"value": "{{groupId}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{endpoint}}/message/send",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"message",
+										"send"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "CSRF-Token",
+												"value": "{{csrf}}",
+												"description": "Required",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "message",
+													"value": "test",
+													"description": "Message to send",
+													"type": "text"
+												},
+												{
+													"key": "groupId",
+													"value": "{{groupId}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{endpoint}}/message/send",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"message",
+												"send"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true\n}"
+								}
+							]
+						},
+						{
+							"name": "leave group",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "CSRF-Token",
+										"value": "{{csrf}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "groupId",
+											"value": "{{groupId}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{endpoint}}/message/group/leave",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"message",
+										"group",
+										"leave"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "CSRF-Token",
+												"value": "{{csrf}}",
+												"description": "Required",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "groupId",
+													"value": "{{groupId}}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{endpoint}}/message/group/leave",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"message",
+												"group",
+												"leave"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"success\": true,\n    \"msg\": \"You have left the conversation.\"\n}"
+								}
+							]
 						}
 					]
 				},
@@ -677,7 +2304,67 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/no-completed-rooms-public/:username",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"no-completed-rooms-public",
+												":username"
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "{{username}}"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "2"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										}
+									],
+									"cookie": [],
+									"body": "12"
+								}
+							]
 						},
 						{
 							"name": "user completed rooms",
@@ -696,7 +2383,8 @@
 									"query": [
 										{
 											"key": "username",
-											"value": "{{username}}"
+											"value": "{{username}}",
+											"description": "Username"
 										},
 										{
 											"key": "limit",
@@ -709,7 +2397,186 @@
 									]
 								}
 							},
-							"response": []
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/all-completed-rooms?username={{username}}&limit=10&page=1",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"all-completed-rooms"
+											],
+											"query": [
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"description": "Username"
+												},
+												{
+													"key": "limit",
+													"value": "10"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"description\": \"Learn about active recon, web app attacks and privilege escalation.\",\n        \"title\": \"Vulnversity\",\n        \"code\": \"vulnversity\",\n        \"difficulty\": \"easy\",\n        \"type\": \"walkthrough\",\n        \"tags\": [\n            \"recon\",\n            \"privesc\",\n            \"webappsec\",\n            \"video\"\n        ],\n        \"image\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/85dee7ce633f5668b104d329da2769c3.png\",\n        \"banner\": \"https://i.imgur.com/JFYfwL8.png\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "user created rooms",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/created_rooms?page=1",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"created_rooms"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/created_rooms?page=1",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"created_rooms"
+											],
+											"query": [
+												{
+													"key": "page",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Wed, 06 Apr 2022 21:35:29 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "AWSALB=8OLSh5k6pMqfexIlBGX8T5u7uo/sYPdO/g9ifCBhsWyou7jOJ9eeP7dzhCimQwTcXWpEruJuNhCvQ9KEjSdEIEBa/6rm7ny3m9uXxkexP8+zOT+bRov+ZCJSU/XP; Expires=Wed, 13 Apr 2022 21:35:29 GMT; Path=/"
+										},
+										{
+											"key": "Set-Cookie",
+											"value": "AWSALBCORS=8OLSh5k6pMqfexIlBGX8T5u7uo/sYPdO/g9ifCBhsWyou7jOJ9eeP7dzhCimQwTcXWpEruJuNhCvQ9KEjSdEIEBa/6rm7ny3m9uXxkexP8+zOT+bRov+ZCJSU/XP; Expires=Wed, 13 Apr 2022 21:35:29 GMT; Path=/; SameSite=None"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "ETag",
+											"value": "W/\"b2-HHBcGTduvq/rmXz6uoxcX6hn4RI\""
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Expect-CT",
+											"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "6f7da74f6c2e0c7d-AMS"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"rooms\": [],\n    \"success\": true,\n    \"paginator\": {\n        \"totalDocs\": 0,\n        \"totalInPage\": 0,\n        \"limit\": 10,\n        \"page\": 1,\n        \"totalPages\": 1,\n        \"hasPrevPage\": false,\n        \"hasNextPage\": false,\n        \"prevPage\": null,\n        \"nextPage\": null\n    }\n}"
+								}
+							]
 						},
 						{
 							"name": "created rooms",
@@ -717,7 +2584,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{endpoint}}/api/created-rooms/:username?limit=50",
+									"raw": "{{endpoint}}/api/created-rooms/:username?limit=50&page=1",
 									"host": [
 										"{{endpoint}}"
 									],
@@ -730,15 +2597,128 @@
 										{
 											"key": "limit",
 											"value": "50"
+										},
+										{
+											"key": "page",
+											"value": "1"
 										}
 									],
 									"variable": [
 										{
 											"key": "username",
-											"value": "{{username}}"
+											"value": "{{username}}",
+											"description": "Username"
 										}
 									]
 								}
+							},
+							"response": [
+								{
+									"name": "Successful Operation",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{endpoint}}/api/created-rooms/:username?limit=50&page=1",
+											"host": [
+												"{{endpoint}}"
+											],
+											"path": [
+												"api",
+												"created-rooms",
+												":username"
+											],
+											"query": [
+												{
+													"key": "limit",
+													"value": "50"
+												},
+												{
+													"key": "page",
+													"value": "1"
+												}
+											],
+											"variable": [
+												{
+													"key": "username",
+													"value": "{{username}}",
+													"description": "Username"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "Express"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"rooms\": [\n        {\n            \"success\": true,\n            \"roomCode\": \"forensics\",\n            \"roomId\": \"5ccce7126f44b1531f275e8c\",\n            \"creators\": [],\n            \"accessToken\": \"76ebb058352809ec7befecb6fc0a2e213d1fa1cc\",\n            \"title\": \"Forensics \",\n            \"description\": \"This is a memory dump of compromised system, do some forensics kung-fu  to explore the inside.\",\n            \"image\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/5a29531ce4e04213b0215c4a00ba4cf1.jpg\",\n            \"created\": \"2019-05-04T01:12:50.939Z\",\n            \"published\": \"2019-05-04T01:12:50.939Z\",\n            \"users\": 3074,\n            \"type\": \"challenge\",\n            \"public\": true,\n            \"cloneable\": true,\n            \"code\": \"forensics\",\n            \"oneTimeFee\": 0,\n            \"difficulty\": \"medium\",\n            \"freeToUse\": true,\n            \"ctf\": false,\n            \"sponsor\": {\n                \"enabled\": false,\n                \"file\": \"\",\n                \"name\": \"\"\n            },\n            \"tags\": [\n                \"security\",\n                \"forensics\",\n                \"RE\"\n            ],\n            \"ipType\": \"private\",\n            \"simpleRoom\": false,\n            \"writeups\": [],\n            \"headerImage\": \"/img/banners/default_tryhackme.png\",\n            \"locked\": false,\n            \"comingSoon\": false,\n            \"checked\": {\n                \"status\": \"unreleased\",\n                \"comments\": []\n            },\n            \"views\": 20636,\n            \"scoreType\": 0,\n            \"video\": {\n                \"free\": true,\n                \"source\": \"THM\",\n                \"timestamps\": [],\n                \"active\": false,\n                \"autoOpen\": true\n            },\n            \"network\": {\n                \"creators\": [],\n                \"active\": false\n            },\n            \"paidAccess\": {\n                \"costs\": [],\n                \"users\": [],\n                \"active\": false,\n                \"streak\": {\n                    \"enabled\": false,\n                    \"number\": 0\n                }\n            },\n            \"certificate\": false,\n            \"timeToComplete\": 0,\n            \"userCompleted\": true\n        }\n    ],\n    \"success\": true,\n    \"paginator\": {\n        \"totalDocs\": 3,\n        \"totalInPage\": 3,\n        \"limit\": 50,\n        \"page\": 1,\n        \"totalPages\": 1,\n        \"hasPrevPage\": false,\n        \"hasNextPage\": false,\n        \"prevPage\": null,\n        \"nextPage\": null\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Material",
+					"item": [
+						{
+							"name": "custom running VM",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/vm/custom-running",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"vm",
+										"custom-running"
+									]
+								},
+								"description": "If user hasn't created any rooms this returns a `404`"
+							},
+							"response": []
+						},
+						{
+							"name": "material reset-upload",
+							"request": {
+								"method": "POST",
+								"header": []
 							},
 							"response": []
 						}
@@ -763,12 +2743,75 @@
 							"variable": [
 								{
 									"key": "username",
-									"value": "{{username}}"
+									"value": "{{username}}",
+									"description": "Username"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/user/rank/:username",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"rank",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"description": "Username"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "18"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userRank\": 29857\n}"
+						}
+					]
 				},
 				{
 					"name": "user activty",
@@ -788,12 +2831,78 @@
 							"query": [
 								{
 									"key": "username",
-									"value": "{{username}}"
+									"value": "{{username}}",
+									"description": "Username"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/user/activity-events?username={{username}}",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"activity-events"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"description": "Username"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": [\n        {\n            \"_id\": {\n                \"year\": \"2020\",\n                \"month\": \"12\",\n                \"day\": \"03\",\n                \"action\": \"answer-question\"\n            },\n            \"events\": 6\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "all friends",
@@ -809,9 +2918,67 @@
 								"friend",
 								"all"
 							]
-						}
+						},
+						"description": "connect.sid required"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/friend/all",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"friend",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"username\": \"friend_name\",\n        \"totalPoints\": 4868,\n        \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/1afd4059c95e975385a6604dd28f6768.png\",\n        \"streak\": 0,\n        \"lastRoom\": {\n            \"title\": \"Squid Game\",\n            \"code\": \"squidgameroom\"\n        }\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "discord user",
@@ -832,12 +2999,450 @@
 							"variable": [
 								{
 									"key": "username",
+									"value": "{{username}}",
+									"description": "Username"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/discord/user/:username",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"discord",
+										"user",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"description": "Username"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userRank\": 29857,\n    \"points\": 4868,\n    \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/1afd4059c95e975385a6604dd28f6768.png\",\n    \"subscribed\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "search user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/similar-users/:username",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"similar-users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
 									"value": "{{username}}"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/similar-users/:username",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"similar-users",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "{{username}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"userId\": \"5eaf4682df79206dbb75d000\",\n        \"username\": \"username\",\n        \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/1afd4059c95e975385a6604dd28f6768.png\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "user exists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/user/exist/:username",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"exist",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": "{{username}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/user/exist/:username",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"exist",
+										":username"
+									],
+									"variable": [
+										{
+											"key": "username",
+											"value": "{{username}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "user skills",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/user/skills/data",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"skills",
+								"data"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/user/skills/data",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"skills",
+										"data"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 06 Apr 2022 21:00:19 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALB=IrX7B0gX0Gjxqp6XO/9HstezFRQN3kMpGmw3rPQVbCSTIFEMfz8tQOC0VVbkY6nRz7vj+mUpMZiikYm2gAIWi+9q2xkm4BJ9TxRgFQ1BqatOLlgxcRkWBpgxbY8k; Expires=Wed, 13 Apr 2022 21:00:19 GMT; Path=/"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALBCORS=IrX7B0gX0Gjxqp6XO/9HstezFRQN3kMpGmw3rPQVbCSTIFEMfz8tQOC0VVbkY6nRz7vj+mUpMZiikYm2gAIWi+9q2xkm4BJ9TxRgFQ1BqatOLlgxcRkWBpgxbY8k; Expires=Wed, 13 Apr 2022 21:00:19 GMT; Path=/; SameSite=None"
+								},
+								{
+									"key": "set-cookie",
+									"value": "_csrf=LjXD7lE-wSqOoN5esZcbbjYQ; Path=/"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a6-aCavgqP0udPt/OKKNsKs/AenNIY\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6f7d73cadfb50119-AMS"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"skills\": {\n        \"linux\": {\n            \"score\": 20\n        },\n        \"web\": {\n            \"score\": 0\n        },\n        \"windows\": {\n            \"score\": 0\n        },\n        \"fundamentals\": {\n            \"score\": 3\n        },\n        \"privesc\": {\n            \"score\": 20\n        },\n        \"network\": {\n            \"score\": 8\n        }\n    },\n    \"recommendations\": []\n}"
+						}
+					]
+				},
+				{
+					"name": "toggle room developer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/account/toggle-room-developer",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"account",
+								"toggle-room-developer"
+							]
+						},
+						"description": "This API call will only toggle the `room developer` state.\n\nIt has no way to let u know in which state u are"
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/account/toggle-room-developer",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"account",
+										"toggle-room-developer"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 06 Apr 2022 21:26:02 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "16"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALB=tE8RcP72gEWuvdzjzSdn/SIi/8mDgY5LoUs75Jwo2d8V3B+pWa4Wxnw1G0+NkJAyrjyZI1t5JYQJLRtIPoGQNz9hN9I8E0OHv5XmS+zZlCCGsV+do2V0N3RCnJGC; Expires=Wed, 13 Apr 2022 21:26:02 GMT; Path=/"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALBCORS=tE8RcP72gEWuvdzjzSdn/SIi/8mDgY5LoUs75Jwo2d8V3B+pWa4Wxnw1G0+NkJAyrjyZI1t5JYQJLRtIPoGQNz9hN9I8E0OHv5XmS+zZlCCGsV+do2V0N3RCnJGC; Expires=Wed, 13 Apr 2022 21:26:02 GMT; Path=/; SameSite=None"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10-oV4hJxRVSENxc/wX8+mA4/Pe4tA\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6f7d997a0bddfa3c-AMS"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true\n}"
+						}
+					]
 				}
 			]
 		},
@@ -865,12 +3470,77 @@
 									"description": "machines, networks"
 								}
 							]
-						}
+						},
+						"description": "connect.sid required"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/vpn/get-available-vpns?type=machines",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"vpn",
+										"get-available-vpns"
+									],
+									"query": [
+										{
+											"key": "type",
+											"value": "machines",
+											"description": "machines, networks"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"servers\": [\n        \"EU-Regular-2\"\n    ],\n    \"unlockVIPServers\": false,\n    \"currentServer\": \"EU-Regular-2\"\n}"
+						}
+					]
 				},
 				{
-					"name": "my-data",
+					"name": "vpn info",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -883,9 +3553,67 @@
 								"vpn",
 								"my-data"
 							]
-						}
+						},
+						"description": "connect.sid required\n\n`virtualIP` and `publicIP` only visible when connected to the vpn"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/vpn/my-data",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"vpn",
+										"my-data"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"virtualIP\": \"10.9.24.75\",\n    \"publicIP\": \"x.x.x.x\",\n    \"serverStatus\": true\n}"
+						}
+					]
 				}
 			]
 		},
@@ -908,7 +3636,232 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/paths/summary",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"paths",
+										"summary"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28d6-RxKud0WQ13JZM5dTvGmjsw/Rw0E\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"Web Fundamentals\",\n        \"intro\": \"<p>The aim of this path is to teach you how to attack web applications. To successfully attack and exploit web applications, you need to understand how they work. The first section (Web Fundamentals) will give you all the pre-requisite knowledge on this.&nbsp;</p><p>The second section (Security Tools) focuses on learning how to use Industry Standard tooling to interact with your targets.&nbsp;</p><p>The third section (Vulnerabilities) covers various vulnerabilities found in web applications today. This section will go over root causes of these vulnerabilities and give you hands on experience on exploiting them.</p><p>The final section (Practise Makes Perfect) will help you apply what you've learnt in previous sections.</p><p>After completing this path, you should be able to:</p><ul><li>understand how web applications work</li><li>utilise industry standard tooling when attacking web applications</li><li>explain and exploit common web vulnerabilities</li><li>apply this knowledge to other targets (be it within an interview or a professional web applications security assessment)</li></ul>\",\n        \"banner\": \"https://assets.tryhackme.com/img/paths/web.jpg\",\n        \"image\": \"https://assets.tryhackme.com/img/paths/web.jpg\",\n        \"color\": \"#3594af\",\n        \"taskNo\": 4,\n        \"rooms\": 22,\n        \"hours\": 37,\n        \"description\": \"<p style=\\\"text-align: center; \\\">A pathway to web application security.</p><ul><li style=\\\"text-align: left;\\\">Understand web fundamentals</li><li style=\\\"text-align: left;\\\">Major vulnerabilities explained</li><li style=\\\"text-align: left;\\\">Learn industry-used tools</li><li style=\\\"text-align: left;\\\">Web application assessments</li></ul>\",\n        \"summary\": \"\",\n        \"code\": \"web\",\n        \"difficulty\": {\n            \"text\": \"Easy\",\n            \"css\": \"easy\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "public paths",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/paths/public",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"paths",
+								"public"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/paths/public",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"paths",
+										"public"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"username\": \"tryhackme\",\n        \"code\": \"web\",\n        \"title\": \"Web Fundamentals\",\n        \"description\": \"<p style=\\\"text-align: center; \\\">A pathway to web application security.</p><ul><li style=\\\"text-align: left;\\\">Understand web fundamentals</li><li style=\\\"text-align: left;\\\">Major vulnerabilities explained</li><li style=\\\"text-align: left;\\\">Learn industry-used tools</li><li style=\\\"text-align: left;\\\">Web application assessments</li></ul>\",\n        \"color\": \"#3594af\",\n        \"image\": \"https://assets.tryhackme.com/img/paths/web.jpg\",\n        \"banner\": \"https://assets.tryhackme.com/img/paths/web.jpg\",\n        \"intro\": \"<p>The aim of this path is to teach you how to attack web applications. To successfully attack and exploit web applications, you need to understand how they work. The first section (Web Fundamentals) will give you all the pre-requisite knowledge on this.&nbsp;</p><p>The second section (Security Tools) focuses on learning how to use Industry Standard tooling to interact with your targets.&nbsp;</p><p>The third section (Vulnerabilities) covers various vulnerabilities found in web applications today. This section will go over root causes of these vulnerabilities and give you hands on experience on exploiting them.</p><p>The final section (Practise Makes Perfect) will help you apply what you've learnt in previous sections.</p><p>After completing this path, you should be able to:</p><ul><li>understand how web applications work</li><li>utilise industry standard tooling when attacking web applications</li><li>explain and exploit common web vulnerabilities</li><li>apply this knowledge to other targets (be it within an interview or a professional web applications security assessment)</li></ul>\",\n        \"contentType\": \"rooms\",\n        \"public\": true,\n        \"tasks\": [\n            {\n                \"title\": \"Web Fundamentals\",\n                \"time\": 4,\n                \"overview\": \"<p>Before attacking web applications, it's important to understand how the internet and web applications work.</p>\",\n                \"outcomes\": \"\",\n                \"_id\": \"5feb1b4885b9b64f93978e0f\",\n                \"rooms\": [\n                    {\n                        \"code\": \"tutorial\",\n                        \"information\": \"Learn how to use and get started with TryHackMe\",\n                        \"_id\": \"5feb1b4885b9b64f93978e13\"\n                    }\n                ],\n                \"taskNo\": 1\n            }\n        ],\n        \"modules\": [],\n        \"roomNo\": 22,\n        \"summary\": \"\",\n        \"careers\": [],\n        \"difficulty\": \"easy\",\n        \"timeToComplete\": {\n            \"_total\": 335,\n            \"burpsuitebasics\": 60,\n            \"burpsuiteextender\": 30,\n            \"burpsuiteintruder\": 90,\n            \"burpsuiteom\": 45,\n            \"burpsuiterepeater\": 60,\n            \"tutorial\": 50\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "single path",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/paths/single/:path_code",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"paths",
+								"single",
+								":path_code"
+							],
+							"variable": [
+								{
+									"key": "path_code",
+									"value": "{{path_code}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/paths/single/:path_code",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"paths",
+										"single",
+										":path_code"
+									],
+									"variable": [
+										{
+											"key": "path_code",
+											"value": "{{path_code}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"tryhackme\",\n    \"code\": \"presecurity\",\n    \"title\": \"Pre Security\",\n    \"description\": \"<p style=\\\"text-align: center;\\\">Before hacking something, you first need to understand the basics.</p><ul><li style=\\\"text-align: left;\\\">Cyber security basics</li><li style=\\\"text-align: left;\\\">Networking basics and weaknesses<br></li><li style=\\\"text-align: left;\\\">The web and common attacks</li><li style=\\\"text-align: left;\\\">Learn to use the Linux operating system</li></ul>\",\n    \"color\": \"#8aad2e\",\n    \"image\": \"https://assets.tryhackme.com/img/paths/cyberfundamentals.png\",\n    \"banner\": \"https://assets.tryhackme.com/img/paths/cyberfundamentals.png\",\n    \"intro\": \"<p>This learning path will teach you the pre-requisite technical knowledge to get started in cyber security. To attack or defend any technology, you have to first learn how this technology works.<br></p><p>The Pre-Security learning path is a beginner friendly and fun way to learn the basics. Your cyber security learning journey starts here!<br></p>\",\n    \"contentType\": \"modules\",\n    \"public\": true,\n    \"tasks\": [\n        {\n            \"id\": \"60cf5a30437056aee2dbabf6\",\n            \"title\": \"Cyber Security Introduction\",\n            \"moduleURL\": \"pre-security-intro\",\n            \"time\": 8,\n            \"overview\": \"Understand why learning the technical fundamentals is important to succeed in your cyber security learning journey.\",\n            \"image\": \"/img/network/unknown_infected.png\",\n            \"outcomes\": \"\",\n            \"rooms\": [\n                {\n                    \"code\": \"beginnerpathintro\",\n                    \"information\": null,\n                    \"order\": 1\n                }\n            ],\n            \"taskNo\": 1\n        }\n    ],\n    \"modules\": [],\n    \"roomNo\": 16,\n    \"summary\": \"Cyber security is often thought to be a magical process that can only be done by the elite, and TryHackMe is here to show you that's not the case. Anyone, with any experience level, can learn cyber security and this Pre-Security learning path is the place to start.\",\n    \"careers\": [],\n    \"difficulty\": \"easy\",\n    \"timeToComplete\": {\n        \"_total\": 100,\n        \"linuxfundamentalspart1\": 10,\n        \"windowsfundamentals1xbx\": 30,\n        \"windowsfundamentals2x0x\": 30,\n        \"windowsfundamentals3xzx\": 30\n    },\n    \"badges\": [\n        {\n            \"title\": \"cat linux.txt\",\n            \"description\": \"Being competent in Linux\",\n            \"image\": \"/img/badges/linux.svg\",\n            \"toEarn\": \"linuxctf\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
@@ -931,33 +3884,159 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/modules/summary",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"modules",
+										"summary"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"title\": \"How The Web Works\",\n        \"summary\": \"To become a better hacker it's vital to understand the underlying functions of the world wide web and what makes it work.\",\n        \"moduleURL\": \"how-the-web-works\",\n        \"image\": \"https://assets.tryhackme.com/img/modules/application-vulnerabilities.png\",\n        \"rooms\": 4\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Module",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/modules/data/:module_code",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"modules",
+								"data",
+								":module_code"
+							],
+							"variable": [
+								{
+									"key": "module_code",
+									"value": "{{module_code}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/modules/data/:module_code",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"modules",
+										"data",
+										":module_code"
+									],
+									"variable": [
+										{
+											"key": "module_code",
+											"value": "{{module_code}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"title\": \"How The Web Works\",\n    \"description\": \"In this module, we'll take you through the building blocks of the world wide web and explain in detail exactly what happens when you enter a website address into your browser. From DNS to HTTP protocol this module will give you all the information you need to understand the world wide web.\",\n    \"summary\": \"To become a better hacker it's vital to understand the underlying functions of the world wide web and what makes it work.\",\n    \"moduleURL\": \"how-the-web-works\",\n    \"image\": \"https://assets.tryhackme.com/img/modules/application-vulnerabilities.png\",\n    \"rooms\": [\n        {\n            \"orderId\": 1,\n            \"code\": \"dnsindetail\",\n            \"image\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/64e64795aa420cc8e9fb3be1bd69c302.png\",\n            \"title\": \"DNS in Detail\",\n            \"description\": \"Learn how DNS works and how it helps you access internet services.\",\n            \"completed\": false,\n            \"free\": true\n        }\n    ],\n    \"prerequisites\": [\n        {\n            \"id\": \"60cf421a437056aee2bed66d\",\n            \"title\": \"Network Fundamentals\",\n            \"summary\": \"Learn the core concepts of how computers communicate with each other and types of network weaknesses.\",\n            \"moduleURL\": \"network-fundamentals\",\n            \"image\": \"https://assets.tryhackme.com/img/modules/network-vulnerabilities.png\",\n            \"rooms\": 5\n        }\n    ],\n    \"nextSteps\": [\n        {\n            \"id\": \"5fb84d7104c12aa15e28a2e1\",\n            \"title\": \"Linux Fundamentals\",\n            \"summary\": \"Many servers and security tools use Linux. Learn how to use the Linux operating system, a critical skill in cyber security.\",\n            \"moduleURL\": \"linux-fundamentals\",\n            \"image\": \"https://assets.tryhackme.com/img/modules/linux-fundamentals.png\",\n            \"rooms\": 3\n        }\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "games",
 			"item": [
-				{
-					"name": "recent games",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/games/koth/recent/games",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"games",
-								"koth",
-								"recent",
-								"games"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "machine-pool",
 					"request": {
@@ -976,7 +4055,238 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/games/koth/get/machine-pool",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"games",
+										"koth",
+										"get",
+										"machine-pool"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"title\": \"H1: Hard\",\n        \"os\": \"linux\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "game detail",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/koth/data/:game_code",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"data",
+								":game_code"
+							],
+							"variable": [
+								{
+									"key": "game_code",
+									"value": "{{game_code}}",
+									"description": "Game code"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/games/koth/data/:game_code",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"games",
+										"koth",
+										"data",
+										":game_code"
+									],
+									"variable": [
+										{
+											"key": "game_code",
+											"value": "{{game_code}}",
+											"description": "Game code"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"id\": 35009,\n    \"startTime\": \"2021-11-16T12:55:00.553Z\",\n    \"startTimeRemaining\": -2277.291,\n    \"finishTime\": \"2021-11-16T13:55:00.456Z\",\n    \"finishTimeRemaining\": 1322.612,\n    \"status\": \"running\",\n    \"king\": {\n        \"found\": true,\n        \"username\": \"Babauca\",\n        \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/9f18d6484c418493667933c024c83a19.jpeg\",\n        \"changes\": 1\n    },\n    \"chartData\": {\n        \"series\": [\n            {\n                \"name\": \"Babauca\",\n                \"currentPoints\": 190,\n                \"data\": [\n                    190\n                ]\n            }\n        ],\n        \"labels\": [\n            \"2021-11-16T13:32:00.213Z\"\n        ],\n        \"firstHacked\": \"2021-11-16T13:19:00.162Z\"\n    },\n    \"tableData\": [\n        {\n            \"username\": \"Babauca\",\n            \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/9f18d6484c418493667933c024c83a19.jpeg\",\n            \"level\": 13,\n            \"country\": \"ro\",\n            \"score\": 190,\n            \"flags\": 2,\n            \"kingTime\": 14,\n            \"rank\": 1\n        }\n    ],\n    \"userIds\": [\n        \"60322258d577651459772777\"\n    ],\n    \"box\": {\n        \"title\": \"Lion\",\n        \"os\": \"linux\"\n    },\n    \"flagNo\": 6,\n    \"resets\": 0,\n    \"gameType\": \"public\",\n    \"createdBy\": {\n        \"success\": true,\n        \"userId\": \"6182fd7695903e004a0dee46\",\n        \"username\": \"DarkSurface\",\n        \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/42a741e1d5a533d1b196c99e2f9605ca.jpg\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "recent games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/games/koth/recent/games",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"games",
+								"koth",
+								"recent",
+								"games"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/games/koth/recent/games",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"games",
+										"koth",
+										"recent",
+										"games"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"success\": true,\n        \"id\": 34948,\n        \"startTime\": \"2021-11-15T03:06:00.605Z\",\n        \"startTimeRemaining\": -19538.236,\n        \"finishTime\": \"2021-11-15T04:06:00.133Z\",\n        \"finishTimeRemaining\": -15938.708,\n        \"status\": \"complete\",\n        \"king\": {\n            \"found\": true,\n            \"username\": \"comradecheese\",\n            \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/5e474724ea8f39cb7eab0958a65e8249.jpg\",\n            \"changes\": 1\n        },\n        \"chartData\": {\n            \"series\": [\n                {\n                    \"name\": \"comradecheese\",\n                    \"currentPoints\": 625,\n                    \"data\": [\n                        10\n                    ]\n                }\n            ],\n            \"labels\": [\n                \"2021-11-15T03:16:00.184Z\"\n            ],\n            \"firstHacked\": \"2021-11-15T03:16:00.184Z\"\n        },\n        \"tableData\": [\n            {\n                \"username\": \"comradecheese\",\n                \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/5e474724ea8f39cb7eab0958a65e8249.jpg\",\n                \"level\": 13,\n                \"country\": \"au\",\n                \"score\": 625,\n                \"flags\": 3,\n                \"kingTime\": 50,\n                \"rank\": 1\n            }\n        ],\n        \"userIds\": [\n            \"5ed6284073273a56a11e4e33\"\n        ],\n        \"box\": {\n            \"title\": \"Production\",\n            \"os\": \"linux\"\n        },\n        \"flagNo\": 4,\n        \"resets\": 0,\n        \"gameType\": \"public\",\n        \"createdBy\": {\n            \"success\": true,\n            \"userId\": \"60986be438bb2a005aa29f3e\",\n            \"username\": \"B3NZ\",\n            \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/2edc26bef6039fe11f7ea6cb69179157.jpg\"\n        }\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "user games",
@@ -1016,12 +4326,78 @@
 							"query": [
 								{
 									"key": "username",
-									"value": "{{username}}"
+									"value": "{{username}}",
+									"description": "Username"
 								}
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/games/tickets/won?username={{username}}",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"games",
+										"tickets",
+										"won"
+									],
+									"query": [
+										{
+											"key": "username",
+											"value": "{{username}}",
+											"description": "Username"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"ticketsWon\": [],\n    \"ticketsAva\": [\n        {\n            \"name\": \"pentester-title\",\n            \"title\": \"Pentester Title\",\n            \"colour\": \"brown\",\n            \"automaticRedeem\": true\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
 					"name": "new King of the hill",
@@ -1083,32 +4459,6 @@
 						}
 					},
 					"response": []
-				},
-				{
-					"name": "game detail",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{endpoint}}/games/koth/data/:game_code",
-							"host": [
-								"{{endpoint}}"
-							],
-							"path": [
-								"games",
-								"koth",
-								"data",
-								":game_code"
-							],
-							"variable": [
-								{
-									"key": "game_code",
-									"value": "{{game_code}}"
-								}
-							]
-						}
-					},
-					"response": []
 				}
 			]
 		},
@@ -1134,7 +4484,7 @@
 					},
 					"response": [
 						{
-							"name": "is running",
+							"name": "Successful Operation",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
@@ -1155,10 +4505,6 @@
 							"_postman_previewlanguage": "json",
 							"header": [
 								{
-									"key": "Date",
-									"value": "Sun, 14 Nov 2021 23:10:10 GMT"
-								},
-								{
 									"key": "Content-Type",
 									"value": "application/json; charset=utf-8"
 								},
@@ -1171,52 +4517,24 @@
 									"value": "keep-alive"
 								},
 								{
-									"key": "Set-Cookie",
-									"value": "AWSALB=gf7jHLgt7pkO9agt2zSGfqkIi+WWLl86aXNV8FApHHafXOIkdjQ39GPLf166IeckkB//OueW8lGyxzwfAI5AJHEHGd+yPw1riP7JMwKKc73/eDllOeiG7eIhKSiy; Expires=Sun, 21 Nov 2021 23:10:10 GMT; Path=/"
-								},
-								{
-									"key": "Set-Cookie",
-									"value": "AWSALBCORS=gf7jHLgt7pkO9agt2zSGfqkIi+WWLl86aXNV8FApHHafXOIkdjQ39GPLf166IeckkB//OueW8lGyxzwfAI5AJHEHGd+yPw1riP7JMwKKc73/eDllOeiG7eIhKSiy; Expires=Sun, 21 Nov 2021 23:10:10 GMT; Path=/; SameSite=None"
-								},
-								{
 									"key": "X-Powered-By",
 									"value": "Express"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1c2-jUsc0r6mMUUhMHmEZbdjObRbpSw\""
 								},
 								{
 									"key": "CF-Cache-Status",
 									"value": "DYNAMIC"
 								},
 								{
-									"key": "Expect-CT",
-									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
-								},
-								{
-									"key": "Report-To",
-									"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=wmEODTvGI3qURDb2sFtHUGVc8wD%2FIIIsuv46NsCYXM2mF54vqeuVDlI1gZlHWT8%2Feh1%2FNhVVq%2FL9ZtzkPSq%2BRaSHkN5hgg3fUZCVkcMN7zTifxZVII3dVfbZ%2FK9RNRw%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
-								},
-								{
-									"key": "NEL",
-									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
-								},
-								{
 									"key": "Server",
 									"value": "cloudflare"
 								},
 								{
-									"key": "CF-RAY",
-									"value": "6ae3e9663a3b0b88-AMS"
-								},
-								{
 									"key": "Content-Encoding",
-									"value": "br"
+									"value": "gzip"
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"roomId\": \"room_code\",\n        \"expires\": \"2021-11-15T00:08:21.178Z\",\n        \"created\": \"2021-11-14T23:08:21.178Z\",\n        \"internalIP\": \"10.10.156.97\",\n        \"instanceId\": \"instanceId\",\n        \"title\": \"Title\",\n        \"timeInSeconds\": 3490.209,\n        \"remote\": {\n            \"active\": true,\n            \"bootTime\": 2,\n            \"privateIp\": \"10.10.156.97\",\n            \"remoteUrl\": \"https://vnc.tryhackme.tech/index.html?host=proxy.tryhackme.tech&password=tryhackme&proxyIP=10.10.156.97&resize=remote\",\n            \"protocol\": \"vnc\"\n        },\n        \"waitTime\": null\n    }\n]"
+							"body": "[\n    {\n        \"roomId\": \"freeattackbox\",\n        \"expires\": \"2021-12-14T00:11:01.100Z\",\n        \"created\": \"2021-12-13T23:11:01.100Z\",\n        \"internalIP\": \"10.10.213.54\",\n        \"instanceId\": \"i-08f60068511e2bc42\",\n        \"title\": \"THM AttackBox\",\n        \"timeInSeconds\": 684.386,\n        \"remote\": {\n            \"active\": true,\n            \"bootTime\": 2,\n            \"privateIp\": \"10.10.213.54\",\n            \"remoteUrl\": \"https://vnc.tryhackme.tech/index.html?host=proxy-2.tryhackme.tech&password=9cc799ce61a19fba&proxyIP=10.10.203.54&resize=remote\",\n            \"protocol\": \"vnc\"\n        },\n        \"waitTime\": null,\n        \"credentials\": {\n            \"username\": \"root\",\n            \"password\": \"9cc799ce61a19fba\"\n        }\n    },\n    {\n        \"roomId\": \"adventofcyber3\",\n        \"expires\": \"2021-12-14T00:57:29.273Z\",\n        \"created\": \"2021-12-13T23:57:29.274Z\",\n        \"internalIP\": \"10.10.253.26\",\n        \"instanceId\": \"i-081bc74233f86423c\",\n        \"title\": \"AoC2021-Day4CMN\",\n        \"timeInSeconds\": 3472.534,\n        \"remote\": {\n            \"active\": false\n        },\n        \"waitTime\": null\n    }\n]"
 						}
 					]
 				},
@@ -1224,18 +4542,20 @@
 					"name": "VM renew",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "CSRF-Token",
+								"value": "{{csrf}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "code",
 									"value": "{{room_code}}",
-									"type": "text"
-								},
-								{
-									"key": "_csrf",
-									"value": "",
+									"description": "Room code",
 									"type": "text"
 								}
 							]
@@ -1258,18 +4578,20 @@
 					"name": "VM terminate",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "CSRF-Token",
+								"value": "{{csrf}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "formdata",
 							"formdata": [
 								{
 									"key": "code",
 									"value": "{{room_code}}",
-									"type": "text"
-								},
-								{
-									"key": "_csrf",
-									"value": "",
+									"description": "Room code",
 									"type": "text"
 								}
 							]
@@ -1291,6 +4613,743 @@
 			]
 		},
 		{
+			"name": "Leaderboard",
+			"item": [
+				{
+					"name": "leaderboards",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/leaderboards",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"leaderboards"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "{{country_code}}",
+									"description": "Optional",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "monthly",
+									"description": "Optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/leaderboards",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"leaderboards"
+									],
+									"query": [
+										{
+											"key": "country",
+											"value": "{{country_code}}",
+											"description": "Optional",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "monthly",
+											"description": "Optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"ranks\": [\n        {\n            \"_id\": \"5e3595f110c4674ba9f80e7a\",\n            \"username\": \"0day\",\n            \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/84d2961d9c289eb17f35950df3ac8438.jpg\",\n            \"country\": \"us\",\n            \"level\": 999,\n            \"points\": 95426,\n            \"monthlyPoints\": 1676,\n            \"rooms\": 549\n        }\n    ],\n    \"usersRank\": 0\n}"
+						}
+					]
+				},
+				{
+					"name": "leaderboards King of the hill",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/leaderboards/koth",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"leaderboards",
+								"koth"
+							],
+							"query": [
+								{
+									"key": "country",
+									"value": "{{country_code}}",
+									"description": "Optional",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "monthly",
+									"description": "Optional",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/leaderboards/koth",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"leaderboards",
+										"koth"
+									],
+									"query": [
+										{
+											"key": "country",
+											"value": "{{country_code}}",
+											"description": "Optional",
+											"disabled": true
+										},
+										{
+											"key": "type",
+											"value": "monthly",
+											"description": "Optional",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"gamesWon\": 300,\n            \"username\": \"jceggink\",\n            \"avatar\": \"https://secure.gravatar.com/avatar/4395206fc04f3fc8335bcb60095913ec.jpg?s=200&d=robohash&r=x\",\n            \"country\": \"qa\",\n            \"level\": 12\n        }\n    ],\n    \"currentUserId\": 0\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "network",
+			"item": [
+				{
+					"name": "networks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/networks",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"networks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/networks",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"networks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"rooms\": [\n        {\n            \"title\": \"Throwback\",\n            \"description\": \"An Active Directory lab that teaches the fundamentals and core concepts of attacking a Windows network. The network simulates a realistic corporate environment that has several attack vectors you would expect to find in todayâ€™s organisations.\",\n            \"streak\": {\n                \"enabled\": false,\n                \"number\": 100,\n                \"accessTime\": 30\n            },\n            \"freeToUse\": true,\n            \"imageUrl\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/e1f446aa9a7742df81589fa69a9de919.png\",\n            \"code\": \"throwback\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "network",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/room/network?code={{network_code}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"room",
+								"network"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "{{network_code}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/room/network?code={{network_code}}",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"room",
+										"network"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "{{network_code}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/e2fc35f5363bb517113c7d4ee0b73f96.jpg\",\n        \"username\": \"Sq00ky\"\n    },\n    {\n        \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/user-avatars/9e946af210ae86d6fbfda480d958b3fe.gif\",\n        \"username\": \"Cryillic\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "network layout",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/network/get-network-config?roomId={{room_code}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"network",
+								"get-network-config"
+							],
+							"query": [
+								{
+									"key": "roomId",
+									"value": "{{room_code}}",
+									"description": "Room id from a network room"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Successful Operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/network/get-network-config?roomId={{room_code}}",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"network",
+										"get-network-config"
+									],
+									"query": [
+										{
+											"key": "roomId",
+											"value": "{{room_code}}",
+											"description": "Room id from a network room"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 06 Apr 2022 21:23:55 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALB=GoYU7PNXUWYSmaOHvbHExJE7NYNvyroc/gax6skXrLmBoIr2Nj3a9OLsHHGpqbHNpFAbqT5rNa49IWURJR758y7v6NHjGcvwQGhlM0I6hQJihoZE1nH1RkOXHwVL; Expires=Wed, 13 Apr 2022 21:23:55 GMT; Path=/"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "AWSALBCORS=GoYU7PNXUWYSmaOHvbHExJE7NYNvyroc/gax6skXrLmBoIr2Nj3a9OLsHHGpqbHNpFAbqT5rNa49IWURJR758y7v6NHjGcvwQGhlM0I6hQJihoZE1nH1RkOXHwVL; Expires=Wed, 13 Apr 2022 21:23:55 GMT; Path=/; SameSite=None"
+								},
+								{
+									"key": "Set-Cookie",
+									"value": "connect.sid=s%3APhDwDSJNpC6bCkq05k-G5kUZrQqULJY2.IVjMZCfi1b5q%2FDqMhTh1TrphbVqaYgkyCJfq4hV%2BKIU; Path=/; Expires=Wed, 13 Apr 2022 21:23:55 GMT; HttpOnly"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"868-7UUO888w207XqjyP/86m5xzodUU\""
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Expect-CT",
+									"value": "max-age=604800, report-uri=\"https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct\""
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "CF-RAY",
+									"value": "6f7d965d6bc2fa3c-AMS"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"state\": \"stopped\",\n    \"_id\": \"5ff3928fc47755750a843757\",\n    \"group\": \"wreath\",\n    \"nodes\": [\n        {\n            \"id\": 1,\n            \"image\": \"/img/network/unknown.png\",\n            \"label\": \"10.200.71.200\",\n            \"_id\": \"603430b356a9601325ac2bb9\",\n            \"change\": [\n                {\n                    \"active\": true,\n                    \"taskNo\": 5,\n                    \"questionNo\": 2,\n                    \"correct\": true,\n                    \"image\": \"/img/network/linux.png\",\n                    \"label\": \"10.200.71.200\",\n                    \"_id\": \"603430b356a9601325ac2bbb\"\n                },\n                {\n                    \"active\": true,\n                    \"taskNo\": 6,\n                    \"questionNo\": 2,\n                    \"correct\": true,\n                    \"image\": \"/img/network/linux_infected.png\",\n                    \"label\": \"prod-serv\\\\n10.200.71.200\",\n                    \"_id\": \"603430b356a9601325ac2bba\"\n                }\n            ]\n        },\n        {\n            \"id\": 2,\n            \"image\": \"/img/network/unknown.png\",\n            \"label\": \"\",\n            \"_id\": \"603430b356a9601325ac2bb4\",\n            \"change\": [\n                {\n                    \"active\": true,\n                    \"taskNo\": 17,\n                    \"questionNo\": 2,\n                    \"correct\": true,\n                    \"image\": \"/img/network/unknown.png\",\n                    \"label\": \"10.200.71.150\",\n                    \"_id\": \"603430b356a9601325ac2bb8\"\n                },\n                {\n                    \"active\": true,\n                    \"taskNo\": 20,\n                    \"questionNo\": 2,\n                    \"correct\": true,\n                    \"image\": \"/img/network/unknown.png\",\n                    \"label\": \"git-serv\\\\n10.200.71.150\",\n                    \"_id\": \"603430b356a9601325ac2bb7\"\n                },\n                {\n                    \"active\": true,\n                    \"taskNo\": 20,\n                    \"questionNo\": 3,\n                    \"correct\": true,\n                    \"image\": \"/img/network/windows2016.png\",\n                    \"label\": \"git-serv\\\\n10.200.71.150\",\n                    \"_id\": \"603430b356a9601325ac2bb6\"\n                },\n                {\n                    \"active\": true,\n                    \"taskNo\": 20,\n                    \"questionNo\": 4,\n                    \"correct\": true,\n                    \"image\": \"/img/network/windows2016_infected.png\",\n                    \"label\": \"git-serv\\\\n10.200.71.150\",\n                    \"_id\": \"603430b356a9601325ac2bb5\"\n                }\n            ]\n        },\n        {\n            \"id\": 3,\n            \"image\": \"/img/network/unknown.png\",\n            \"label\": \"\",\n            \"_id\": \"603430b356a9601325ac2baf\",\n            \"change\": [\n                {\n                    \"active\": true,\n                    \"taskNo\": 17,\n                    \"questionNo\": 2,\n                    \"correct\": true,\n                    \"image\": \"/img/network/unknown.png\",\n                    \"label\": \"10.200.71.100\",\n                    \"_id\": \"603430b356a9601325ac2bb3\"\n                },\n                {\n                    \"active\": true,\n                    \"taskNo\": 20,\n                    \"questionNo\": 3,\n                    \"correct\": true,\n                    \"image\": \"/img/network/windows2016.png\",\n                    \"label\": \"10.200.71.100\",\n                    \"_id\": \"603430b356a9601325ac2bb2\"\n                },\n                {\n                    \"active\": true,\n                    \"taskNo\": 39,\n                    \"questionNo\": 5,\n                    \"correct\": true,\n                    \"image\": \"/img/network/windows2016.png\",\n                    \"label\": \"wreath-pc\\\\n10.200.71.100\",\n                    \"_id\": \"603430b356a9601325ac2bb1\"\n                },\n                {\n                    \"active\": true,\n                    \"taskNo\": 43,\n                    \"questionNo\": 4,\n                    \"correct\": true,\n                    \"image\": \"/img/network/windows2016_infected.png\",\n                    \"label\": \"wreath-pc\\\\n10.200.71.100\",\n                    \"_id\": \"603430b356a9601325ac2bb0\"\n                }\n            ]\n        }\n    ],\n    \"connections\": [\n        {\n            \"from\": 1,\n            \"to\": 2,\n            \"_id\": \"603430b356a9601325ac2bbd\"\n        },\n        {\n            \"from\": 2,\n            \"to\": 3,\n            \"_id\": \"603430b356a9601325ac2bbc\"\n        }\n    ],\n    \"outlineOnly\": true,\n    \"tutorial\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "cost",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/room/costs?code={{network_code}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"room",
+								"costs"
+							],
+							"query": [
+								{
+									"key": "code",
+									"value": "{{network_code}}"
+								}
+							]
+						},
+						"description": "note network codes are always lower case"
+					},
+					"response": [
+						{
+							"name": "Successful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/room/costs?code={{network_code}}",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"room",
+										"costs"
+									],
+									"query": [
+										{
+											"key": "code",
+											"value": "{{network_code}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"duration\": 45,\n        \"amountInUSD\": 85,\n        \"amountInGBP\": 68\n    },\n    {\n        \"duration\": 30,\n        \"amountInUSD\": 60,\n        \"amountInGBP\": 48\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "hacktivities",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/hacktivities?page=1&order=most-popular&difficulty=all&type=all&free=all&limit=100&categories={{categorieId}}",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"hacktivities"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "order",
+									"value": "most-popular",
+									"description": "most-popular, newest, most-users"
+								},
+								{
+									"key": "difficulty",
+									"value": "all",
+									"description": "all, info, easy, medium, hard, insane"
+								},
+								{
+									"key": "type",
+									"value": "all",
+									"description": "all, challenge, walkthrough"
+								},
+								{
+									"key": "free",
+									"value": "all",
+									"description": "all, subscription, free"
+								},
+								{
+									"key": "limit",
+									"value": "100"
+								},
+								{
+									"key": "searchTxt",
+									"value": "",
+									"description": "Optional Search query",
+									"disabled": true
+								},
+								{
+									"key": "categories",
+									"value": "{{categorieId}}",
+									"description": "optional topic search, for a list of ids run `Get Search topics`"
+								}
+							]
+						},
+						"description": "[hackivities](https://tryhackme.com/hacktivities) Is bigger then one API call, This needs to be build out :)\n\nCategories is a list of ids, these ids come from the `Get search topics` call. The list contains Topics, os and teams"
+					},
+					"response": [
+						{
+							"name": "Succesful operation",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/api/hacktivities?page=1&order=most-popular&difficulty=all&type=all&free=all&limit=100",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"api",
+										"hacktivities"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "order",
+											"value": "most-popular"
+										},
+										{
+											"key": "difficulty",
+											"value": "all"
+										},
+										{
+											"key": "type",
+											"value": "all"
+										},
+										{
+											"key": "free",
+											"value": "all"
+										},
+										{
+											"key": "limit",
+											"value": "100"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "CF-Cache-Status",
+									"value": "DYNAMIC"
+								},
+								{
+									"key": "NEL",
+									"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+								},
+								{
+									"key": "Server",
+									"value": "cloudflare"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "br"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"paginator\": {\n        \"totalDocs\": 465,\n        \"totalInPage\": 100,\n        \"limit\": 100,\n        \"page\": 1,\n        \"totalPages\": 5,\n        \"hasPrevPage\": false,\n        \"hasNextPage\": true,\n        \"prevPage\": null,\n        \"nextPage\": 2\n    },\n    \"rooms\": [\n        {\n            \"image\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/95164927092fe0fc3e9f142aea05267a.png\",\n            \"title\": \"Introductory Networking\",\n            \"description\": \"An introduction to networking theory and basic networking tools\",\n            \"code\": \"introtonetworking\",\n            \"users\": 138876,\n            \"tags\": [\n                \"Encapsulation\"\n            ],\n            \"type\": \"walkthrough\",\n            \"difficulty\": \"easy\",\n            \"userCompleted\": false,\n            \"upVotes\": 6386,\n            \"created\": \"2020-03-24T19:45:34.808Z\",\n            \"published\": \"2020-03-24T20:02:36.481Z\",\n            \"freeToUse\": true,\n            \"headerImage\": \"https://i.imgur.com/QaCai7k.jpg\",\n            \"creator\": \"MuirlandOracle\"\n        }\n    ],\n    \"success\": true\n}"
+						}
+					]
+				},
+				{
+					"name": "search topics",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "server-time",
 			"request": {
 				"method": "GET",
@@ -1306,7 +5365,60 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Successful Operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/server-time",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"server-time"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"datetime\": \"2021-11-15T07:54:42.303Z\"\n}"
+				}
+			]
 		},
 		{
 			"name": "site-stats",
@@ -1324,130 +5436,139 @@
 					]
 				}
 			},
-			"response": []
-		},
-		{
-			"name": "leaderboards",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{endpoint}}/api/leaderboards",
-					"host": [
-						"{{endpoint}}"
-					],
-					"path": [
-						"api",
-						"leaderboards"
-					],
-					"query": [
-						{
-							"key": "country",
-							"value": "{{country_code}}",
-							"description": "Optional",
-							"disabled": true
-						},
-						{
-							"key": "type",
-							"value": "monthly",
-							"description": "Optional",
-							"disabled": true
+			"response": [
+				{
+					"name": "Successful Operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/site-stats",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"site-stats"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "leaderboards King of the hill",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{endpoint}}/api/leaderboards/koth",
-					"host": [
-						"{{endpoint}}"
-					],
-					"path": [
-						"api",
-						"leaderboards",
-						"koth"
-					],
-					"query": [
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
 						{
-							"key": "country",
-							"value": "{{country_code}}",
-							"description": "Optional",
-							"disabled": true
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
 						},
 						{
-							"key": "type",
-							"value": "monthly",
-							"description": "Optional",
-							"disabled": true
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
 						}
-					]
+					],
+					"cookie": [],
+					"body": "{\n    \"publicRooms\": 491,\n    \"totalUsers\": 752018,\n    \"cloneableRooms\": 5137\n}"
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "hacktivities",
+			"name": "practice rooms",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{endpoint}}/api/hacktivities?page=1&free=all&order=most-popular&difficulty=all&type=all",
+					"raw": "{{endpoint}}/api/practice-rooms",
 					"host": [
 						"{{endpoint}}"
 					],
 					"path": [
 						"api",
-						"hacktivities"
-					],
-					"query": [
-						{
-							"key": "page",
-							"value": "1"
-						},
-						{
-							"key": "free",
-							"value": "all"
-						},
-						{
-							"key": "order",
-							"value": "most-popular"
-						},
-						{
-							"key": "difficulty",
-							"value": "all"
-						},
-						{
-							"key": "type",
-							"value": "all"
+						"practice-rooms"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Successful Operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/practice-rooms",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"practice-rooms"
+							]
 						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "networks",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{endpoint}}/api/networks",
-					"host": [
-						"{{endpoint}}"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
 					],
-					"path": [
-						"api",
-						"networks"
-					]
+					"cookie": [],
+					"body": "{\n    \"featured\": [\n        {\n            \"code\": \"basicpentestingjt\",\n            \"imageURL\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/99c72676aab814b94e3bc350ba627b71.png\",\n            \"title\": \"Basic Pentesting\",\n            \"description\": \"This is a machine that allows you to practise web app hacking and privilege escalation \",\n            \"difficulty\": \"easy\",\n            \"completedRoom\": false\n        }\n    ],\n    \"webExploitation\": [\n        {\n            \"code\": \"picklerick\",\n            \"imageURL\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/47d2d3ade1795f81a155d0aca6e4da96.jpeg\",\n            \"title\": \"Pickle Rick\",\n            \"description\": \"A Rick and Morty CTF. Help turn Rick back into a human!\",\n            \"difficulty\": \"easy\",\n            \"completedRoom\": false\n        }\n    ],\n    \"windowsExploitation\": [\n        {\n            \"code\": \"blue\",\n            \"imageURL\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/7717bbc69c486931e503a74f3192a4d8.gif\",\n            \"title\": \"Blue\",\n            \"description\": \"Deploy & hack into a Windows machine, leveraging common misconfigurations issues.\",\n            \"difficulty\": \"easy\",\n            \"completedRoom\": false\n        }\n    ],\n    \"defensive\": [\n        {\n            \"code\": \"investigatingwindows2\",\n            \"imageURL\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/355f44b808c9981ee344fd9a32738eb3.png\",\n            \"title\": \"Investigating Windows 2.0\",\n            \"description\": \"In the previous challenge you performed a brief analysis. Within this challenge, you will take a deeper dive into the attack. \",\n            \"difficulty\": \"medium\",\n            \"completedRoom\": false\n        }\n    ],\n    \"recommended\": []\n}"
 				}
-			},
-			"response": []
+			]
 		},
 		{
 			"name": "series",
@@ -1455,7 +5576,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{endpoint}}/api/series?show=details_only",
+					"raw": "{{endpoint}}/api/series?show=all&name={{serie_code}}",
 					"host": [
 						"{{endpoint}}"
 					],
@@ -1466,13 +5587,92 @@
 					"query": [
 						{
 							"key": "show",
-							"value": "details_only",
+							"value": "all",
 							"description": "details_only, all"
+						},
+						{
+							"key": "name",
+							"value": "{{serie_code}}",
+							"description": "Optional filter"
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Successful Operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/api/series?show=all",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"api",
+								"series"
+							],
+							"query": [
+								{
+									"key": "show",
+									"value": "all",
+									"description": "details_only, all"
+								},
+								{
+									"key": "name",
+									"value": "{{serie_code}}",
+									"description": "Optional filter",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 15 Nov 2021 08:04:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"_id\": \"5f5243d417785f3a8ea8e89b\",\n        \"id\": \"overpass\",\n        \"name\": \"Overpass\",\n        \"description\": \"Follow the story of the Overpass company as they try to start a successful security software company. Covers basic web vulnerabilities, beginner cryptography, password cracking, PCAP forensics, and analysing source code.\",\n        \"badgeName\": \"overpass\",\n        \"difficulty\": \"medium\",\n        \"rooms\": [\n            {\n                \"id\": \"5ef3db5457209c66ea9aae94\",\n                \"code\": \"overpass\",\n                \"avatar\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/2048656e072dd7caffe455ae2d44b65f.png\",\n                \"title\": \"Overpass\",\n                \"description\": \"What happens when some broke CompSci students make a password manager?\",\n                \"tags\": [\n                    \"NinjaJc01\"\n                ],\n                \"image\": \"https://tryhackme-images.s3.amazonaws.com/room-icons/2048656e072dd7caffe455ae2d44b65f.png\",\n                \"freeToUse\": true,\n                \"userCompleted\": false\n            }\n        ],\n        \"badge\": {\n            \"title\": \"Investigations\",\n            \"name\": \"investigations\",\n            \"image\": \"/img/badges/investigations_badge.svg\",\n            \"description\": \"Completing the Cyber Defense Investigation series\",\n            \"toEarn\": []\n        }\n    }\n]"
+				}
+			]
 		},
 		{
 			"name": "subscription cost",
@@ -1489,9 +5689,64 @@
 						"subscription",
 						"cost"
 					]
-				}
+				},
+				"description": "connect.sid required"
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Successful Operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/account/subscription/cost",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"account",
+								"subscription",
+								"cost"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"amount\": 10,\n    \"currency\": \"usd\",\n    \"symbol\": \"$\"\n}"
+				}
+			]
 		},
 		{
 			"name": "glossary",
@@ -1509,7 +5764,64 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Successful Operation",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/glossary/all-terms",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"glossary",
+								"all-terms"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"Linux\",\n    \"PHP\",\n    \"CVE\",\n    \"NIST\",\n    \"CMS\",\n    \"MITM\",\n    \"ROE\",\n    \"PoC\",\n    \"CVSS\",\n    \"VPR\",\n    \"CIA\",\n    \"XML\",\n    \"DAD\",\n    \"MDA\",\n    \"MTA\",\n    \"MUA\",\n    \"PKI\",\n    \"IDS\",\n    \"HTTP\",\n    \"FTP\",\n    \"SMTP\",\n    \"UDP\",\n    \"TCP\",\n    \"ARP\",\n    \"DNS\",\n    \"OS\",\n    \"EDR\",\n    \"SPF\",\n    \"DKIM\",\n    \"DMARC\"\n]"
+				}
+			]
 		}
 	],
 	"event": [
@@ -1522,6 +5834,8 @@
 					"// Set connect.sid cookie ",
 					"const cookieJar = pm.cookies.jar();",
 					"cookieJar.set(pm.environment.get(\"endpoint\"), \"connect.sid\", pm.environment.get(\"connect.sid\"), (error, cookie) => {console.log(error)});",
+					"cookieJar.set(pm.environment.get(\"endpoint\"), \"_csrf\", \"value\", ",
+					"    (error, cookie) => {console.log(error)});",
 					""
 				]
 			}
@@ -1531,9 +5845,75 @@
 			"script": {
 				"type": "text/javascript",
 				"exec": [
-					""
+					"// JSON Magic Postman Template",
+					"const templateUrl = \"https://raw.githubusercontent.com/dexterlabora/json-magic/master/postman/postman-viz-jsonmagic-template.html\"",
+					"",
+					"//Load template",
+					"pm.sendRequest(templateUrl,  (_, res) => { ",
+					"    var template = res.text()",
+					"    var data = pm.response.json()",
+					"    pm.visualizer.set(template, data )",
+					"});"
 				]
 			}
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "https://tryhackme.com"
+		},
+		{
+			"key": "csrf",
+			"value": ""
+		},
+		{
+			"key": "connect.sid",
+			"value": ""
+		},
+		{
+			"key": "country_code",
+			"value": ""
+		},
+		{
+			"key": "username",
+			"value": ""
+		},
+		{
+			"key": "groupId",
+			"value": ""
+		},
+		{
+			"key": "path_code",
+			"value": ""
+		},
+		{
+			"key": "module_code",
+			"value": ""
+		},
+		{
+			"key": "network_code",
+			"value": ""
+		},
+		{
+			"key": "room_code",
+			"value": ""
+		},
+		{
+			"key": "game_code",
+			"value": ""
+		},
+		{
+			"key": "task_number",
+			"value": ""
+		},
+		{
+			"key": "question_number",
+			"value": ""
+		},
+		{
+			"key": "question_answer",
+			"value": ""
 		}
 	]
 }
